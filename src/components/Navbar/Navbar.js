@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom';
+import Button from '../Button/Button';
 
 
 
@@ -14,36 +15,19 @@ const Navbar = () => {
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            {location.pathname === '/' && (
-              <li class="nav-item">
-                <button type="button" class="btn btn-secondary btn-sm">Small button</button>
-              </li>
-            )}
-            {location.pathname === '/menu' && (
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                <button type="button" class="btn btn-dark btn-sm rounded-0">Pedidos</button>
+          {location.pathname === '/' && (
+            
+            <Button />
 
-                </li>
-                <li>
-                <button type="button" class="btn btn-dark btn-sm rounded-0">Usuarios</button>
-                  
-                </li>
-                <li>
-                <button type="button" class="btn btn-dark btn-sm rounded-0">Menu</button>
-                  
-                </li>
+          )}
+          
 
-              </ul>
-              
-              
-            )}
+          
 
             
             
            
-          </ul>
+          
         </div>
       </div>
     </nav>

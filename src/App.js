@@ -3,16 +3,16 @@ import Landing from "./pages/home/Landing";
 import Menu from "./pages/admin/Menu";
 import Requests from "./pages/admin/Requests";
 import Users from "./pages/admin/Users";
-
-
-
-
+import Order from "./pages/home/Order";
+import State from "./pages/home/State";
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Landing />} />     
+        <Route path="/" element={<Landing />} />    
+        <Route path="/order" element={<Order />} />     
+        <Route path="/state" element={<State/>} />     
         <Route path="/menu" element={<Menu />} />
         <Route path="/requests" element={<Requests />} />
         <Route path="/users" element={<Users />} />
