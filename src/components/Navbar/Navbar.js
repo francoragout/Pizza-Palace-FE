@@ -3,6 +3,7 @@ import { NavLink, useLocation } from 'react-router-dom';
 import Button from '../Button/Button';
 import Modal from '../Modal/Modal';
 import Dropdowns from '../Dropdowns/Dropdowns';
+import Offcanvas from '../Offcanvas/Offcanvas';
 
 const Navbar = () => {
   const location = useLocation();
@@ -30,9 +31,7 @@ const Navbar = () => {
           {location.pathname === '/order' && (
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
-                
-                <Dropdowns account="User account"/>
-                           
+                <Dropdowns account="User account"/>    
               </li>
               <li className="nav-item">
                 <NavLink to="/state" activeclassname="active">
@@ -40,10 +39,30 @@ const Navbar = () => {
                 </NavLink>               
               </li>
               <li className="nav-item">
-                
                 <Button 
-                name="Ver carrito"/>
-                           
+                name="Ver carrito"
+                toggle="offcanvas"
+                target="#offcanvasRight"
+                controls="offcanvasRight"/>   
+              </li>
+            </ul>           
+          )}
+          {location.pathname === '/state' && (
+            <ul className="navbar-nav ms-auto">
+              <li className="nav-item">
+                <Dropdowns account="User account"/>    
+              </li>
+              <li className="nav-item">
+                <NavLink to="/order" activeclassname="active">
+                  <Button name="Volver al menú"/>
+                </NavLink>               
+              </li>
+              <li className="nav-item">
+              <Button 
+                name="Ver carrito"
+                toggle="offcanvas"
+                target="#offcanvasRight"
+                controls="offcanvasRight"/>   
               </li>
             </ul>           
           )}
@@ -52,6 +71,7 @@ const Navbar = () => {
       </div>
     </nav>
     <Modal />
+    <Offcanvas />
     </>
   )
 }
