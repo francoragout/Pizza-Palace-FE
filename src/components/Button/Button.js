@@ -1,18 +1,15 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
 
 const Button = (props) => {
   return (
-    <NavLink 
-    to={props.link}
+    <button 
     type="button"
-    className="btn btn-dark btn-sm rounded-0"
-    activeClassName="active"
+    className="btn btn-dark rounded-0"
     data-bs-toggle={props.toggle}
     data-bs-target={props.target}
     aria-controls={props.controls}>
       {props.name}
-    </NavLink>
+    </button>
   )
 }
 
