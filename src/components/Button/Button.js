@@ -8,7 +8,7 @@ const Button = (props) => {
     data-bs-toggle={props.toggle}
     data-bs-target={props.target}
     aria-controls={props.controls}>
-      {props.name}
+      <i class={props.icon}></i> {props.name} 
     </button>
   )
 }

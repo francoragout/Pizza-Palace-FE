@@ -1,0 +1,8 @@
+.accordion-button:not(.collapded)::after {
+  filter: brightness() invert(50%);
+}
+
+.accordion-button:not(.collapded)::after {
+  color: inherit;
+  color: white;
+}

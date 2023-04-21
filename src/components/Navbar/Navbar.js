@@ -12,7 +12,7 @@ const Navbar = () => {
     <>
     <nav class="navbar navbar-expand-md bg-dark" data-bs-theme="dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/">Pizza Palace</a>
+        <a class="navbar-brand" href={location.pathname}>Pizza Palace</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -22,6 +22,7 @@ const Navbar = () => {
               <li className="nav-item">
                 <Button 
                 name="Ingresar"
+                icon="bi bi-box-arrow-in-right"
                 toggle="modal"
                 target="#exampleModal"
                 />
@@ -31,41 +32,31 @@ const Navbar = () => {
           {location.pathname === '/order' && (
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
-                <Dropdowns account="User account"/>    
-              </li>
-              <li className="nav-item">
-                <NavLink to="/state" activeclassname="active">
-                  <Button name="Mis pedidos"/>
+                <NavLink to="/state">
+                  <Button 
+                  name="Pedidos"
+                  icon="bi bi-list-ul"/>
                 </NavLink>               
               </li>
+             
+
               <li className="nav-item">
                 <Button 
-                name="Ver carrito"
+                name="Carrito"
+                icon="bi bi-cart"
                 toggle="offcanvas"
                 target="#offcanvasRight"
                 controls="offcanvasRight"/>   
               </li>
-            </ul>           
-          )}
-          {location.pathname === '/state' && (
-            <ul className="navbar-nav ms-auto">
               <li className="nav-item">
                 <Dropdowns account="User account"/>    
               </li>
-              <li className="nav-item">
-                <NavLink to="/order" activeclassname="active">
-                  <Button name="Volver al menú"/>
-                </NavLink>               
-              </li>
-              <li className="nav-item">
-              <Button 
-                name="Ver carrito"
-                toggle="offcanvas"
-                target="#offcanvasRight"
-                controls="offcanvasRight"/>   
-              </li>
-            </ul>           
+            </ul>                    
           )}
+          
+          
+          
+          
 
         </div>
       </div>
