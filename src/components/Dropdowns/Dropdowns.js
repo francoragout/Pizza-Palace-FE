@@ -10,13 +10,13 @@ const Dropdowns = (props) => {
   }
 
   return (
-    <div class="dropdown">
-      <a class="btn btn-dark dropdown-toggle rounded-0" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-      <i class="bi bi-gear"> </i>
+    <div className="dropdown">
+      <a className="btn btn-dark dropdown-toggle rounded-0" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <i className="bi bi-gear"> </i>
       </a>
-      <ul class="dropdown-menu mt-2 rounded-0 text-center dropdown-menu-end">
+      <ul className="dropdown-menu mt-2 rounded-0 text-center dropdown-menu-end">
         <li><h6>{props.account}</h6></li>
-        <li><button class="dropdown-item text-light btn" onClick={logout}>Cerrar Sesión</button></li>
+        <li><button className="dropdown-item text-light btn" onClick={logout}>Cerrar Sesión</button></li>
       </ul>
     </div>
   )

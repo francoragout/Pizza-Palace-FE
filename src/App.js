@@ -5,10 +5,12 @@ import Requests from "./pages/admin/Requests";
 import Users from "./pages/admin/Users";
 import Order from "./pages/home/Order";
 import State from "./pages/home/State";
+import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   return (
     <Router>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Landing />} />    
         <Route path="/order" element={<Order />} />     
