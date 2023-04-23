@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const State = () => {
+const Status = () => {
   return (
     <>
     
@@ -9,4 +9,4 @@ const State = () => {
   )
 }
 
-export default State
+export default Status
