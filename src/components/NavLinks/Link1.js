@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import Button from '../Button/Button'
 
-const OrderLink = (props) => {
+const Link1 = (props) => {
   return (
     <li className="nav-item">
       <NavLink to="/order">
@@ -15,4 +15,4 @@ const OrderLink = (props) => {
   )
 }
 
-export default OrderLink
+export default Link1

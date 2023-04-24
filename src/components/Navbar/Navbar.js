@@ -4,12 +4,11 @@ import Button from '../Button/Button';
 import Modal from '../Modal/Modal';
 import Dropdowns from '../Dropdowns/Dropdowns';
 import Offcanvas from '../Offcanvas/Offcanvas';
-import RequestsLink from '../Links/RequestsLink';
-import MenuLink from '../Links/MenuLink';
-import UsersLink from '../Links/UsersLink';
-import OrderLink from '../Links/OrderLink';
-import StatusLink from '../Links/StatusLink';
-
+import Link1 from '../NavLinks/Link1';
+import Link2 from '../NavLinks/Link2';
+import Link3 from '../NavLinks/Link3';
+import Link4 from '../NavLinks/Link4';
+import Link5 from '../NavLinks/Link5';
 
 const Navbar = () => {
   const location = useLocation();
@@ -30,41 +29,41 @@ const Navbar = () => {
           )}
           {location.pathname === '/order' && (
             <ul className="navbar-nav ms-auto">
-              <OrderLink className="btn btn-dark rounded-0 active"/>
-              <StatusLink className="btn btn-dark rounded-0"/>                   
+              <Link1 className="btn btn-dark rounded-0 active"/>
+              <Link2 className="btn btn-dark rounded-0"/>                   
               <Button className="btn btn-dark rounded-0" name="Carrito" icon="bi bi-cart" toggle="offcanvas" target="#offcanvasRight" controls="offcanvasRight"/>           
               <Dropdowns account="User account"/>            
             </ul>                    
           )}
           {location.pathname === '/status' && (
             <ul className="navbar-nav ms-auto">
-              <OrderLink className="btn btn-dark rounded-0"/>
-              <StatusLink className="btn btn-dark rounded-0 active"/>                   
+              <Link1 className="btn btn-dark rounded-0"/>
+              <Link2 className="btn btn-dark rounded-0 active"/>                   
               <Button className="btn btn-dark rounded-0" name="Carrito" icon="bi bi-cart" toggle="offcanvas" target="#offcanvasRight" controls="offcanvasRight"/>           
               <Dropdowns account="User account"/>             
             </ul>                    
           )}
           {location.pathname === '/requests' && (
             <ul className="navbar-nav ms-auto">
-              <RequestsLink className="btn btn-dark rounded-0 active"/>
-              <MenuLink className="btn btn-dark rounded-0"/>
-              <UsersLink className="btn btn-dark rounded-0"/>
+              <Link3 className="btn btn-dark rounded-0 active"/>
+              <Link4 className="btn btn-dark rounded-0"/>
+              <Link5 className="btn btn-dark rounded-0"/>
               <Dropdowns account="Admin account"/>
             </ul>
           )}
           {location.pathname === '/menu' && (
             <ul className="navbar-nav ms-auto">
-              <RequestsLink className="btn btn-dark rounded-0"/>
-              <MenuLink className="btn btn-dark rounded-0 active"/>
-              <UsersLink className="btn btn-dark rounded-0"/>
+              <Link3 className="btn btn-dark rounded-0"/>
+              <Link4 className="btn btn-dark rounded-0 active"/>
+              <Link5 className="btn btn-dark rounded-0"/>
               <Dropdowns account="Admin account"/>
             </ul>                    
           )}
           {location.pathname === '/users' && (
             <ul className="navbar-nav ms-auto">
-              <RequestsLink className="btn btn-dark rounded-0"/>
-              <MenuLink className="btn btn-dark rounded-0"/>
-              <UsersLink className="btn btn-dark rounded-0 active"/>
+              <Link3 className="btn btn-dark rounded-0"/>
+              <Link4 className="btn btn-dark rounded-0"/>
+              <Link5 className="btn btn-dark rounded-0 active"/>
               <Dropdowns account="Admin account"/>
             </ul>                    
           )}

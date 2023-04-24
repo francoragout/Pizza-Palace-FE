@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import Button from '../Button/Button'
 
-const MenuLink = (props) => {
+const Link4 = (props) => {
   return (
     <li className="nav-item">
       <NavLink to="/menu">
@@ -15,4 +15,4 @@ const MenuLink = (props) => {
   )
 }
 
-export default MenuLink
+export default Link4

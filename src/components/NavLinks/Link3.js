@@ -2,17 +2,17 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import Button from '../Button/Button'
 
-const UsersLink = (props) => {
+const Link3 = (props) => {
   return (
     <li className="nav-item">
-      <NavLink to="/users">
+      <NavLink to="/requests">
         <Button 
         className={props.className}
-        name="Usuarios"
-        icon="bi bi-person"/>
+        name="Pedidos"
+        icon="bi bi-list-ul"/>
       </NavLink>               
-    </li>  
+    </li> 
   )
 }
 
-export default UsersLink
+export default Link3
