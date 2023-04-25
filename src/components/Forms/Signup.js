@@ -20,7 +20,7 @@ const Signup = () => {
   const [emailValid, setEmailValid] = useState(false);
   function handleEmailChange(event) {
     setEmail(event.target.value);
-    setEmailValid(event.target.value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i));
+    setEmailValid(event.target.value.match(/^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/));
   }
   
   const [password, setPassword] = useState('');
@@ -32,10 +32,18 @@ const Signup = () => {
     setLengthValid(event.target.value.length >= 8);
     setContainsNumber(/\d/.test(event.target.value));
     setContainsUpperCase(/[A-Z]/.test(event.target.value));
+    setPasswordsMatch(event.target.value === confirmPassword);
   }
   
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [passwordsMatch, setPasswordsMatch] = useState(true);
+  const handleConfirmPasswordChange = (event) => {
+    setConfirmPassword(event.target.value);
+    setPasswordsMatch(event.target.value === password);
+  };
+
   const [formValid, setFormValid] = useState(false);
-  const isFormValid = name && lastname && email && lengthValid && containsNumber && containsUpperCase;
+  const isFormValid = nameValid && lastnameValid && emailValid && lengthValid && containsNumber && containsUpperCase && passwordsMatch;
   if (formValid !== isFormValid) {
     setFormValid(isFormValid);
   }
@@ -81,7 +89,7 @@ const Signup = () => {
         <div className="form-floating">
           <input 
           type="email" 
-          maxLength="30"
+          maxLength="40"
           className="form-control" 
           id="email" 
           placeholder="Correo electrónico" 
@@ -112,6 +120,26 @@ const Signup = () => {
         {!lengthValid && <span className='text-secondary'>Debe tener al menos 8 caracteres.</span>}
         {!containsNumber && <span className='text-secondary'>Debe contener al menos un número.</span>}
         {!containsUpperCase && <span className='text-secondary'>Debe contener al menos una letra mayúscula.</span>}
+      </div>
+
+      <div className="input-group mb-1">
+        <span className="input-group-text"><i className="bi bi-shield-check"></i></span>
+        <div className="form-floating">
+          <input 
+          type="password" 
+          maxLength="30" 
+          className="form-control" 
+          id="confirmPassword" 
+          placeholder="Repetir Contraseña" 
+          onChange={handleConfirmPasswordChange}
+          value={confirmPassword}        
+          />
+          <label htmlFor="password">Repetir contraseña</label>
+        </div>         
+      </div>
+      <div className='d-flex flex-column mb-3'>      
+        {!passwordsMatch && <span className='text-secondary'>Las contraseñas no coinciden.</span>}
+        {passwordsMatch && <span className='text-secondary'>Las contraseñas coinciden.</span>}     
       </div>
       <button type="submit" className="btn btn-secondary" disabled={!formValid}>Registrarse</button>
     </form>
