@@ -6,14 +6,14 @@ const Signup = () => {
   const [nameValid, setNameValid] = useState(false);
   function handleNameChange(event) {
     setName(event.target.value);
-    setNameValid(event.target.value.match(/^[a-zA-Z]{3,20}$/));
+    setNameValid(event.target.value.match(/^[a-zA-Z]{3,30}(\s[a-zA-Z]{2,30}){0,2}$/));
   }
 
   const [lastname, setLastname] = useState('');
   const [lastnameValid, setLastnameValid] = useState(false);
   function handleLastnameChange(event) {
     setLastname(event.target.value);
-    setLastnameValid(event.target.value.match(/^[a-zA-Z]{3,20}$/));
+    setLastnameValid(event.target.value.match(/^[a-zA-Z]{3,30}(\s[a-zA-Z]{2,30}){0,2}$/));
   }
   
   const [email, setEmail] = useState('');
@@ -57,7 +57,7 @@ const Signup = () => {
       <div className="form-floating mb-1">
         <input 
         type="text" 
-        maxLength="20"
+        maxLength="30"
         className="form-control" 
         id="name" 
         placeholder="Nombre" 
@@ -72,7 +72,7 @@ const Signup = () => {
       <div className="form-floating mb-1">
         <input 
         type="text" 
-        maxLength="20"
+        maxLength="30"
         className="form-control" 
         id="lastname" 
         placeholder="Apellido" 
