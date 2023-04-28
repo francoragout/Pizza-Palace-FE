@@ -1,24 +1,26 @@
+import axios from 'axios';
 import React from 'react'
 import { useState } from 'react'
+import Alert from '../Alert/Alert';
 
 const Signup = () => {
   const [name, setName] = useState('');
   const [nameValid, setNameValid] = useState(false);
-  function handleNameChange(event) {
+  const handleNameChange = (event) => {
     setName(event.target.value);
     setNameValid(event.target.value.match(/^[a-zA-Z]{3,30}(\s[a-zA-Z]{2,30}){0,2}$/));
   }
 
   const [lastname, setLastname] = useState('');
   const [lastnameValid, setLastnameValid] = useState(false);
-  function handleLastnameChange(event) {
+  const handleLastnameChange = (event) => {
     setLastname(event.target.value);
     setLastnameValid(event.target.value.match(/^[a-zA-Z]{3,30}(\s[a-zA-Z]{2,30}){0,2}$/));
   }
   
   const [email, setEmail] = useState('');
   const [emailValid, setEmailValid] = useState(false);
-  function handleEmailChange(event) {
+  const handleEmailChange = (event) => {
     setEmail(event.target.value);
     setEmailValid(event.target.value.match(/^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/));
   }
@@ -27,7 +29,7 @@ const Signup = () => {
   const [lengthValid, setLengthValid] = useState(false);
   const [containsNumber, setContainsNumber] = useState(false);
   const [containsUpperCase, setContainsUpperCase] = useState(false);
-  function handlePasswordChange(event) {
+  const handlePasswordChange = (event) => {
     setPassword(event.target.value);
     setLengthValid(event.target.value.length >= 8);
     setContainsNumber(/\d/.test(event.target.value));
@@ -47,13 +49,55 @@ const Signup = () => {
   if (formValid !== isFormValid) {
     setFormValid(isFormValid);
   }
-
-  function handleSubmit(event) {
+  
+  const [registerSuccess, setRegisterSuccess] = useState(false);
+  const [registerError, setRegisterError] = useState(false);
+  const handleSubmit = async(event) => {
     event.preventDefault();
+
+    const formData = {
+      name,
+      lastname,
+      email,
+      password
+    };
+
+    try {
+      const response = await axios.post('http://localhost:8000/users/signup-user', formData);
+      console.log(response.data);
+
+      setRegisterSuccess(true);
+      setTimeout(() => {
+        window.location.reload();
+      }, 2000);
+
+      setFormValid(true)
+      setRegisterError(false)
+
+    } catch (error) {
+      console.error(error);
+      setRegisterError(true);
+      setRegisterSuccess(false)
+    }
   }
 
   return (
     <form onSubmit={handleSubmit}>
+
+      {registerSuccess && (
+        <Alert 
+        className="alert alert-success"
+        icon="bi bi-check-circle-fill me-2"
+        message="Usuario registrado exitosamente"/>
+      )}
+
+      {registerError && (
+        <Alert 
+        className="alert alert-warning"
+        icon="bi bi-exclamation-circle-fill me-2"
+        message="El usuario ingresado ya existe"/>
+      )}
+
       <div className="form-floating mb-1">
         <input 
         type="text" 

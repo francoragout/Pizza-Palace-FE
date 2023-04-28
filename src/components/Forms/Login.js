@@ -11,11 +11,11 @@ const Login = () => {
           type="email" 
           maxLength="40"
           className="form-control" 
-          id="email" 
+          id="loginemail" 
           placeholder="Correo electrónico" 
           
           />
-          <label htmlFor="email">Correo electrónico</label>
+          <label htmlFor="loginemail">Correo electrónico</label>
         </div>
       </div>
       <div className="input-group mb-3">
@@ -25,11 +25,11 @@ const Login = () => {
           type="password" 
           maxLength="30" 
           className="form-control" 
-          id="password" 
+          id="loginpassword" 
           placeholder="Contraseña" 
           
           />
-          <label htmlFor="password">Contraseña</label>
+          <label htmlFor="loginpassword">Contraseña</label>
         </div>         
       </div>
 
