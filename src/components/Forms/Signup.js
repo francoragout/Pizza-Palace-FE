@@ -51,7 +51,9 @@ const Signup = () => {
   }
   
   const [registerSuccess, setRegisterSuccess] = useState(false);
+  const [registerWarning, setRegisterWarning] = useState(false);
   const [registerError, setRegisterError] = useState(false);
+
   const handleSubmit = async(event) => {
     event.preventDefault();
 
@@ -65,19 +67,24 @@ const Signup = () => {
     try {
       const response = await axios.post('http://localhost:8000/users/signup-user', formData);
       console.log(response.data);
-
       setRegisterSuccess(true);
+      setRegisterError(false)
+      setRegisterWarning(false)
       setTimeout(() => {
         window.location.reload();
-      }, 2000);
-
+      }, 2000);   
       setFormValid(true)
-      setRegisterError(false)
-
+      
     } catch (error) {
-      console.error(error);
-      setRegisterError(true);
-      setRegisterSuccess(false)
+      if (error.response.status === 400) {
+        setRegisterWarning(true)
+        setRegisterSuccess(false)
+        setRegisterError(false)
+      } else {
+        setRegisterError(true)
+        setRegisterSuccess(false)
+        setRegisterWarning(false)
+      }
     }
   }
 
@@ -91,11 +98,18 @@ const Signup = () => {
         message="Usuario registrado exitosamente"/>
       )}
 
-      {registerError && (
+      {registerWarning && (
         <Alert 
         className="alert alert-warning"
         icon="bi bi-exclamation-circle-fill me-2"
         message="El usuario ingresado ya existe"/>
+      )}
+
+      {registerError && (
+        <Alert 
+        className="alert alert-danger"
+        icon="bi bi-x-circle-fill me-2"
+        message="Error al registrar usuario"/>
       )}
 
       <div className="form-floating mb-1">
