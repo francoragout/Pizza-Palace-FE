@@ -12,7 +12,7 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Landing />} />    
+        <Route path="/" element={<Landing />} />   
         <Route path="/order" element={<Order />} />     
         <Route path="/status" element={<Status/>} />     
         <Route path="/menu" element={<Menu />} />
@@ -20,7 +20,6 @@ function App() {
         <Route path="/users" element={<Users />} />
       </Routes>
     </Router>
-    
   );
 }
 

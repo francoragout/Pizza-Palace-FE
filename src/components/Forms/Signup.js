@@ -1,6 +1,6 @@
 import axios from 'axios';
-import React from 'react'
-import { useState } from 'react'
+import React from 'react';
+import { useState } from 'react';
 import Alert from '../Alert/Alert';
 
 const Signup = () => {
@@ -74,7 +74,7 @@ const Signup = () => {
         window.location.reload();
       }, 2000);   
       setFormValid(true)
-      
+
     } catch (error) {
       if (error.response.status === 400) {
         setRegisterWarning(true)
@@ -149,11 +149,11 @@ const Signup = () => {
           type="email" 
           maxLength="40"
           className="form-control" 
-          id="email" 
+          id="signupemail" 
           placeholder="Correo electrónico" 
           onChange={handleEmailChange} 
           value={email}/>
-          <label htmlFor="email">Correo electrónico</label>
+          <label htmlFor="signupemail">Correo electrónico</label>
         </div>
       </div>
       <div className='mb-3'>
@@ -167,11 +167,11 @@ const Signup = () => {
           type="password" 
           maxLength="30" 
           className="form-control" 
-          id="password" 
+          id="signuppassword" 
           placeholder="Contraseña" 
           onChange={handlePasswordChange}
           value={password}/>
-          <label htmlFor="password">Contraseña</label>
+          <label htmlFor="signuppassword">Contraseña</label>
         </div>         
       </div>
       <div className='d-flex flex-column mb-3'>      
