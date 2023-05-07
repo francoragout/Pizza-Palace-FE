@@ -17,7 +17,7 @@ const Dropdowns = (props) => {
         </a>
         <ul className="dropdown-menu mt-2 rounded-0 text-center dropdown-menu-end">
           <li><h6>{props.account}</h6></li>
-          <li><button className="dropdown-item text-light btn" onClick={logout}>Cerrar Sesión</button></li>
+          <li><button className="dropdown-item text-light btn" onClick={logout}>Cerrar sesión</button></li>
         </ul>
       </div>
     </li>

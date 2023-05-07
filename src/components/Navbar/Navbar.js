@@ -17,8 +17,8 @@ const Navbar = () => {
     <>
     <nav className="navbar navbar-expand-md bg-dark" data-bs-theme="dark">
       <div className="container-fluid">
-        <a className="navbar-brand" href={location.pathname}>Pizza Palace</a>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        
+        <button className="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">

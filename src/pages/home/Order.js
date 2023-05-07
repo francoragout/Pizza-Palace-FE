@@ -1,4 +1,5 @@
 import React from 'react'
+import Card from '../../components/Card/Card';
 
 const Order = () => {
   const role = localStorage.getItem("role");
@@ -7,11 +8,9 @@ const Order = () => {
   window.location.href = "/";
   }
 
-  
-  
   return (
     <>
-    
+    <Card />
     </>
   )
 }
