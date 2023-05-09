@@ -6,6 +6,7 @@ const Status = () => {
   alert("No tienes autorización para ingresar a esta página");
   window.location.href = "/";
   }
+
   return (
     <>
     
