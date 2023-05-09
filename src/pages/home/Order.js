@@ -1,6 +1,7 @@
 import React from 'react'
 import Category1 from '../../components/Cards/Category1';
-
+import Category2 from '../../components/Cards/Category2';
+import Category3 from '../../components/Cards/Category3';
 
 const Order = () => {
   const role = localStorage.getItem("role");
@@ -12,6 +13,8 @@ const Order = () => {
   return (
     <>
     <Category1 />
+    <Category2 />
+    <Category3 />
     </>
   )
 }
