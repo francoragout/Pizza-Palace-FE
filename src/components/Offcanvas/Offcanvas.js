@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 const Offcanvas = () => {
   return (
     <div className="offcanvas offcanvas-end" tabIndex={-1} id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
@@ -8,7 +9,7 @@ const Offcanvas = () => {
         <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div className="offcanvas-body">
-        ...
+        
       </div>
     </div>
   )
