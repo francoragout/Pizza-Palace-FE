@@ -17,7 +17,6 @@ const Navbar = () => {
     <>
     <nav className="navbar navbar-expand-md bg-dark" data-bs-theme="dark">
       <div className="container-fluid">
-        
         <button className="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -31,7 +30,7 @@ const Navbar = () => {
             <ul className="navbar-nav ms-auto">
               <Link1 className="btn btn-dark rounded-0 active"/>
               <Link2 className="btn btn-dark rounded-0"/>                   
-              <Button className="btn btn-dark rounded-0" name="Carrito" icon="bi bi-cart" toggle="offcanvas" target="#offcanvasRight" controls="offcanvasRight"/>           
+              <Button className="btn btn-dark rounded-0" name="Carrito" icon="bi bi-cart4 me-1" toggle="offcanvas" target="#offcanvasRight" controls="offcanvasRight"/>           
               <Dropdowns account="User account"/>            
             </ul>                    
           )}
@@ -39,7 +38,7 @@ const Navbar = () => {
             <ul className="navbar-nav ms-auto">
               <Link1 className="btn btn-dark rounded-0"/>
               <Link2 className="btn btn-dark rounded-0 active"/>                   
-              <Button className="btn btn-dark rounded-0" name="Carrito" icon="bi bi-cart" toggle="offcanvas" target="#offcanvasRight" controls="offcanvasRight"/>           
+              <Button className="btn btn-dark rounded-0" name="Carrito" icon="bi bi-cart4 me-1" toggle="offcanvas" target="#offcanvasRight" controls="offcanvasRight"/>           
               <Dropdowns account="User account"/>             
             </ul>                    
           )}

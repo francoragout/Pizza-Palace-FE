@@ -33,12 +33,12 @@ const Cards = (props) => {
     addToCart(product);
   }
 
-  
-
   return (
     <div className="container-lg">
       <div className="row">
-        {menuData.map(menuData => (
+        {menuData
+          .filter(menu => menu.name.toLowerCase().includes(props.searchTerm.toLowerCase()))
+          .map(menuData => (
           <div className="col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center my-3" key={menuData._id}>
             <div className="card text-bg-dark" style={{width: "18rem"}}>
               <div className="card-header text-secondary">

@@ -8,7 +8,7 @@ const Link1 = (props) => {
       <Button 
       className={props.className}
       name="Menú"
-      icon="bi bi-journal"/>
+      icon="bi bi-journal me-1"/>
     </NavLink>               
   )
 }

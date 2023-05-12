@@ -117,7 +117,7 @@ const Signup = () => {
         type="text" 
         maxLength="30"
         className="form-control" 
-        id="name" 
+        id="name"
         placeholder="Nombre" 
         onChange={handleNameChange}
         value={name}/>
@@ -153,7 +153,7 @@ const Signup = () => {
           placeholder="Correo electrónico" 
           onChange={handleEmailChange} 
           value={email}/>
-          <label htmlFor="signupemail">Correo electrónico</label>
+          <label htmlFor="#signupemail">Correo electrónico</label>
         </div>
       </div>
       <div className='mb-3'>
@@ -192,7 +192,7 @@ const Signup = () => {
           onChange={handleConfirmPasswordChange}
           value={confirmPassword}        
           />
-          <label htmlFor="password">Repetir contraseña</label>
+          <label htmlFor="confirmPassword">Repetir contraseña</label>
         </div>         
       </div>
       <div className='d-flex flex-column mb-3'>      
