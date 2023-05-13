@@ -23,7 +23,7 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           {location.pathname === '/' && (
             <ul className="navbar-nav ms-auto">            
-              <Button className="btn btn-dark rounded-0" name="Ingresar" icon="bi bi-box-arrow-in-right" toggle="modal" target="#exampleModal"/>            
+              <Button className="btn btn-dark rounded-0" name="Ingresar" icon="bi bi-box-arrow-in-right me-1" toggle="modal" target="#exampleModal"/>            
             </ul>           
           )}
           {location.pathname === '/order' && (

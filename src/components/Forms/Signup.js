@@ -50,6 +50,7 @@ const Signup = () => {
     setFormValid(isFormValid);
   }
   
+  const [hideButton, setHideButton] = useState(true)
   const [registerSuccess, setRegisterSuccess] = useState(false);
   const [registerWarning, setRegisterWarning] = useState(false);
   const [registerError, setRegisterError] = useState(false);
@@ -70,11 +71,11 @@ const Signup = () => {
       setRegisterSuccess(true);
       setRegisterError(false)
       setRegisterWarning(false)
+      setHideButton(false)
       setTimeout(() => {
         window.location.reload();
-      }, 2000);   
-      setFormValid(true)
-
+      }, 3000);   
+      
     } catch (error) {
       if (error.response.status === 400) {
         setRegisterWarning(true)
@@ -199,7 +200,10 @@ const Signup = () => {
         {!passwordsMatch && <span className='text-secondary'>Las contraseñas no coinciden.</span>}
         {passwordsMatch && <span className='text-secondary'>Las contraseñas coinciden.</span>}     
       </div>
-      <button type="submit" className="btn btn-secondary" disabled={!formValid}>Registrarse</button>
+      
+      {hideButton && (
+        <button type="submit" className="btn btn-secondary" disabled={!formValid}>Registrarse</button>
+      )}
     </form>
   )
 }

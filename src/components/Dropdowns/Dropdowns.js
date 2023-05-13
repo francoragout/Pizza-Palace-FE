@@ -9,6 +9,9 @@ const Dropdowns = (props) => {
     }
   }
 
+  const userId = JSON.parse(localStorage.getItem("user"));
+  const user = userId.email
+
   return (
     <li className='nav-item'>
       <div className="dropdown">
@@ -17,7 +20,8 @@ const Dropdowns = (props) => {
         </a>
         <ul className="dropdown-menu mt-2 rounded-0 text-center dropdown-menu-end">
           <li><h6>{props.account}</h6></li>
-          <li><button className="dropdown-item text-light btn" onClick={logout}>Cerrar sesión</button></li>
+          <li><p className='text-light m-2'>{user}</p></li>
+          <li><button className="dropdown-item text-light" onClick={logout}>Cerrar sesión</button></li>
         </ul>
       </div>
     </li>

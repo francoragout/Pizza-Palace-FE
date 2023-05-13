@@ -1,15 +1,20 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Alert from '../Alert/Alert'
+import { CartContext } from '../../contexts/CartContext';
+import axios from 'axios';
 
 const Buy = () => {
-  const user = JSON.parse(localStorage.getItem("user"));
-  const userEmail = user.email
+  const { cartItems } = useContext(CartContext);
+  const total = cartItems.reduce((acc, item) => acc + item.totalPrice, 0);
+  const items = cartItems.map(item => `${item.category} ${item.name} (${item.count})`);
+
+  const userId = JSON.parse(localStorage.getItem("user"));
+  const user = userId.email
 
   const [address, setAddress] = useState('')
   const handleAddressChange = (event) => {
     setAddress(event.target.value)
   }
-
 
   const [phone, setPhone] = useState('')
   const handlePhoneChange = (event) => {
@@ -22,20 +27,38 @@ const Buy = () => {
     setFormValid(isFormValid);
   }
 
-
+  const [hideButton, setHideButton] = useState(true)
   const [requestSuccess, setRequestSuccess] = useState(false);
   const [requestError, setRequestError] = useState(false)
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    
+    const formData = {
+      total,
+      user,
+      address,
+      phone,
+      items
+    };
 
-  const handleSendRequest = async () => {
-
+    try {
+      const response = await axios.post('http://localhost:8000/requests/create-request', formData);
+      console.log(response.data);
+      setRequestSuccess(true);
+      setRequestError(false)
+      setHideButton(false)
+      setTimeout(() => {
+        window.location.reload();
+      }, 3000);   
+       
+    } catch (error) {
+      setRequestError(true)
+      setRequestSuccess(false);
+    }
   }
 
-
-
-
   return (
-    
     <div className="accordion" id="accordionExample">
       <div className="accordion-item">
         <h2 className="accordion-header" id="headingOne">
@@ -45,21 +68,49 @@ const Buy = () => {
         </h2>
         <div id="collapseOne" className="accordion-collapse collapse show"aria-labelledby="headingOne" data-bs-parent="#accordionExample">
           <div className="accordion-body">
-            <form onSubmit={handleSendRequest}>
+            <form onSubmit={handleSubmit}>
 
               {requestSuccess && (
                 <Alert 
                 className="alert alert-success"
                 icon="bi bi-check-circle-fill me-2"
-                message="Usuario registrado exitosamente"/>
+                message="Pedido realizado exitosamente"/>
               )}
 
               {requestError && (
                 <Alert 
                 className="alert alert-success"
                 icon="bi bi-check-circle-fill me-2"
-                message="Usuario registrado exitosamente"/>
+                message="Error al realizar pedido"/>
               )}
+
+              <div className="input-group mb-3">
+                <span className="input-group-text"><i className="bi bi-currency-dollar"></i></span>
+                <div className="form-floating">
+                  <input 
+                  type="number"         
+                  className="form-control" 
+                  id="total" 
+                  placeholder="Total a pagar"
+                  value={total}
+                  readOnly/>
+                  <label htmlFor="total">Total a pagar</label>
+                </div>
+              </div>
+
+              <div className="input-group mb-3">
+                <span className="input-group-text"><i className="bi bi-wallet2"></i></span>
+                <div className="form-floating">
+                  <input 
+                  type="text"         
+                  className="form-control" 
+                  id="payment" 
+                  placeholder="Metodo de pago" 
+                  defaultValue="Efectivo"
+                  readOnly/>
+                  <label htmlFor="payment">Metodo de pago</label>
+                </div>
+              </div>
 
               <div className="input-group mb-3">
                 <span className="input-group-text"><i className="bi bi-person"></i></span>
@@ -69,7 +120,7 @@ const Buy = () => {
                   className="form-control" 
                   id="user" 
                   placeholder="Usuario" 
-                  defaultValue={userEmail}
+                  defaultValue={user}
                   readOnly/>
                   <label htmlFor="user">Usuario</label>
                 </div>
@@ -110,7 +161,10 @@ const Buy = () => {
               <div className='mb-3'>
               {!phone && <span className='text-secondary'>Este campo es requerido.</span>}
               </div>
-              <button type="submit" className="btn btn-secondary" disabled={!formValid}>Enviar pedido</button>
+
+              {hideButton && (
+                <button type="submit" className="btn btn-secondary" disabled={!formValid}>Enviar pedido</button>
+              )}
             </form>      
           </div>
         </div>

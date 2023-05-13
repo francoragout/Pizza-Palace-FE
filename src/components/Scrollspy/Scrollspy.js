@@ -24,13 +24,13 @@ const Scrollspy = () => {
       <nav id="scrollspy" className="navbar bg-light px-3 d-flex justify-content-between justify-content-md-between">
         <ul className="nav nav-pills mt-2">
           <li className="nav-item">
-            <button className="btn btn-secondary rounded-5 me-1" href="#scrollspyHeading1">Pizzas</button>
+            <button className="btn btn-light bg-white border rounded-5 me-1" href="#scrollspyHeading1">Pizzas</button>
           </li>
           <li className="nav-item">
-            <button className="btn btn-secondary rounded-5 me-1" href="#scrollspyHeading2">Bebidas</button>
+            <button className="btn btn-light bg-white border rounded-5 me-1" href="#scrollspyHeading2">Bebidas</button>
           </li>
           <li className="nav-item">
-            <button className="btn btn-secondary rounded-5 me-1" href="#scrollspyHeading3">Cervezas</button>
+            <button className="btn btn-light bg-white border rounded-5 me-1" href="#scrollspyHeading3">Cervezas</button>
           </li>
         </ul>
         <form className="d-flex mt-2" role="search">
