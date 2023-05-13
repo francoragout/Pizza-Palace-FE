@@ -96,14 +96,14 @@ const Signup = () => {
         <Alert 
         className="alert alert-success"
         icon="bi bi-check-circle-fill me-2"
-        message="Usuario registrado exitosamente"/>
+        message="Usuario registrado exitosamente!"/>
       )}
 
       {registerWarning && (
         <Alert 
         className="alert alert-warning"
         icon="bi bi-exclamation-circle-fill me-2"
-        message="El usuario ingresado ya existe"/>
+        message="El usuario ingresado ya existe!"/>
       )}
 
       {registerError && (

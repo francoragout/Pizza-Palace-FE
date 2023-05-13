@@ -74,7 +74,7 @@ const Buy = () => {
                 <Alert 
                 className="alert alert-success"
                 icon="bi bi-check-circle-fill me-2"
-                message="Pedido realizado exitosamente"/>
+                message="Pedido realizado exitosamente!"/>
               )}
 
               {requestError && (
