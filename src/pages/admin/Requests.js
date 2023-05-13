@@ -1,4 +1,5 @@
 import React from 'react'
+import Request from '../../components/Boards/Request';
 
 const Requests = () => {
   const role = localStorage.getItem("role");
@@ -8,6 +9,7 @@ const Requests = () => {
   }
   return (
     <>
+    <Request />
     
     </>
     

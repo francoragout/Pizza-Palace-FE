@@ -38,12 +38,13 @@ const Login = () => {
       if (json.user.role === "admin") {
         localStorage.setItem("access-token", json.token);
         localStorage.setItem("role", json.user.role);
+        localStorage.setItem("user", JSON.stringify(json.user));
         window.location.href = "/requests";
       } else if (json.user.role === "user") {
         localStorage.setItem("access-token", json.token);
         localStorage.setItem("role", json.user.role);
         localStorage.setItem("user", JSON.stringify(json.user));
-        window.location.href = "/order";
+        window.location.href = "/home";
       }
 
       setLoginError(false)

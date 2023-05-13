@@ -4,11 +4,11 @@ import Button from '../Button/Button'
 
 const Link4 = (props) => {
   return (
-    <NavLink to="/menu">
+    <NavLink to="/menus">
       <Button 
       className={props.className}
       name="Menú"
-      icon="bi bi-journal"/>
+      icon="bi bi-journal me-1"/>
     </NavLink> 
   )
 }

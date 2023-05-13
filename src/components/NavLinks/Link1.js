@@ -4,7 +4,7 @@ import Button from '../Button/Button'
 
 const Link1 = (props) => {
   return (
-    <NavLink to="/order">
+    <NavLink to="/home">
       <Button 
       className={props.className}
       name="Menú"

@@ -26,12 +26,12 @@ const Navbar = () => {
               <Button className="btn btn-dark rounded-0" name="Ingresar" icon="bi bi-box-arrow-in-right me-1" toggle="modal" target="#exampleModal"/>            
             </ul>           
           )}
-          {location.pathname === '/order' && (
+          {location.pathname === '/home' && (
             <ul className="navbar-nav ms-auto">
               <Link1 className="btn btn-dark rounded-0 active"/>
               <Link2 className="btn btn-dark rounded-0"/>                   
               <Button className="btn btn-dark rounded-0" name="Carrito" icon="bi bi-cart4 me-1" toggle="offcanvas" target="#offcanvasRight" controls="offcanvasRight"/>           
-              <Dropdowns account="User account"/>            
+              <Dropdowns/>            
             </ul>                    
           )}
           {location.pathname === '/status' && (
@@ -39,7 +39,7 @@ const Navbar = () => {
               <Link1 className="btn btn-dark rounded-0"/>
               <Link2 className="btn btn-dark rounded-0 active"/>                   
               <Button className="btn btn-dark rounded-0" name="Carrito" icon="bi bi-cart4 me-1" toggle="offcanvas" target="#offcanvasRight" controls="offcanvasRight"/>           
-              <Dropdowns account="User account"/>             
+              <Dropdowns/>             
             </ul>                    
           )}
           {location.pathname === '/requests' && (
@@ -47,15 +47,15 @@ const Navbar = () => {
               <Link3 className="btn btn-dark rounded-0 active"/>
               <Link4 className="btn btn-dark rounded-0"/>
               <Link5 className="btn btn-dark rounded-0"/>
-              <Dropdowns account="Admin account"/>
+              <Dropdowns/>
             </ul>
           )}
-          {location.pathname === '/menu' && (
+          {location.pathname === '/menus' && (
             <ul className="navbar-nav ms-auto">
               <Link3 className="btn btn-dark rounded-0"/>
               <Link4 className="btn btn-dark rounded-0 active"/>
               <Link5 className="btn btn-dark rounded-0"/>
-              <Dropdowns account="Admin account"/>
+              <Dropdowns/>
             </ul>                    
           )}
           {location.pathname === '/users' && (
@@ -63,7 +63,7 @@ const Navbar = () => {
               <Link3 className="btn btn-dark rounded-0"/>
               <Link4 className="btn btn-dark rounded-0"/>
               <Link5 className="btn btn-dark rounded-0 active"/>
-              <Dropdowns account="Admin account"/>
+              <Dropdowns/>
             </ul>                    
           )}
         </div>

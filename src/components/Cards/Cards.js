@@ -21,7 +21,7 @@ const Cards = (props) => {
   const location = useLocation();
 
   useEffect(() => {
-    if (location.pathname === '/order') {
+    if (location.pathname === '/home') {
       setShowButton(true);
     } else {
       setShowButton(false);

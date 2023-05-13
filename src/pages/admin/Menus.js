@@ -1,18 +1,14 @@
 import React from 'react'
-import Scrollspy from '../../components/Scrollspy/Scrollspy';
 
-const Order = () => {
+const Menus = () => {
   const role = localStorage.getItem("role");
-  if (role !== "user") {
+  if (role !== "admin") {
   alert("No tienes autorización para ingresar a esta página");
   window.location.href = "/";
   }
-
   return (
-    <>
-    <Scrollspy />
-    </>
+    <div>Menus</div>
   )
 }
 
-export default Order
+export default Menus
