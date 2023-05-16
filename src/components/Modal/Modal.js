@@ -19,7 +19,7 @@ const Modal = () => {
           {location.pathname === '/home' && (
             <Buy />
           )}     
-          {location.pathname === '/status' && (
+          {location.pathname === '/orders' && (
             <Buy />
           )}     
           {location.pathname === '/menus' && (

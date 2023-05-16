@@ -14,6 +14,29 @@ const Request = () => {
     });
   }, []);
 
+  const handleStatusChange = async (requestId, newStatus) => {
+    const confirmed = window.confirm(
+      'Estas seguro de que quieres cambiar el pedido de pendiente a realizado?'
+    );
+
+    if (confirmed) {
+      try {
+        await axios.put('http://localhost:8000/requests/update-request', {
+          id: requestId,
+          status: newStatus,
+        });
+
+        setRequests((prevRequests) =>
+          prevRequests.map((request) =>
+            request._id === requestId ? { ...request, status: newStatus } : request
+          )
+        );
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  };
+
   const handleRefresh = () => {
     window.location.reload();
   };
@@ -34,6 +57,7 @@ const Request = () => {
           <th scope="col">Dirección</th>
           <th scope="col">Teléfono</th>
           <th scope="col">Estado</th>
+          <th scope="col">Acciones</th>
         </tr>
       </thead>
       <tbody>
@@ -53,6 +77,21 @@ const Request = () => {
             <td>{request.address}</td>
             <td>{request.phone}</td>
             <td>{request.status}</td>
+            <td>
+              {request.status === 'Pendiente' ? (
+                <button
+                  onClick={() =>
+                    handleStatusChange(request._id, 'Realizado')
+                  }
+                  className='btn btn-danger btn-sm'>
+                  Cambiar
+                </button>
+              ) : (
+                <button className='btn btn-success btn-sm' disabled>
+                  Cambiar
+                </button>
+              )}
+            </td>
           </tr>
         ))}
       </tbody>

@@ -4,7 +4,7 @@ import Button from '../Button/Button'
 
 const Link2 = (props) => {
   return (
-    <NavLink to="/status">
+    <NavLink to="/orders">
       <Button 
       className={props.className}
       name="Pedidos"

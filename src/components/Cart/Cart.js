@@ -25,7 +25,7 @@ const Cart = () => {
           ))}
           <div className='text-bg-dark w-100 d-flex justify-content-between position-absolute bottom-0 start-0' style={{height: "3rem"}}>
             <h6 className='mx-auto my-auto'>Total: <i className="bi bi-currency-dollar"></i> {cartItems.reduce((acc, item) => acc + item.totalPrice, 0)}</h6>
-            <button type='button' className='btn btn-secondary rounded-0' data-bs-toggle="modal" data-bs-target="#exampleModal">Comprar carrito</button>
+            <button type='button' className='btn btn-secondary rounded-0' data-bs-toggle="modal" data-bs-target="#exampleModal"><h6 className='my-auto'>Comprar carrito</h6></button>
           </div>
         </div>
       ) : (

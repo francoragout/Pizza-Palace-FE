@@ -34,7 +34,7 @@ const Navbar = () => {
               <Dropdowns/>            
             </ul>                    
           )}
-          {location.pathname === '/status' && (
+          {location.pathname === '/orders' && (
             <ul className="navbar-nav ms-auto">
               <Link1 className="btn btn-dark rounded-0"/>
               <Link2 className="btn btn-dark rounded-0 active"/>                   

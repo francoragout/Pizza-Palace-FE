@@ -4,8 +4,8 @@ import Menus from "./pages/admin/Menus";
 import Requests from "./pages/admin/Requests";
 import Users from "./pages/admin/Users";
 import Navbar from "./components/Navbar/Navbar";
-import Status from "./pages/home/Status";
 import Home from "./pages/home/Home";
+import Orders from "./pages/home/Orders";
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Landing />} />   
         <Route path="/home" element={<Home />} />     
-        <Route path="/status" element={<Status/>} />     
+        <Route path="/orders" element={<Orders/>} />     
         <Route path="/menus" element={<Menus />} />
         <Route path="/requests" element={<Requests />} />
         <Route path="/users" element={<Users />} />

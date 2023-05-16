@@ -61,7 +61,7 @@ const Buy = () => {
       setHideButton(false)
       setTimeout(() => {
         window.location.reload();
-      }, 3000);   
+      }, 2000);   
        
     } catch (error) {
       setRequestError(true)

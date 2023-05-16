@@ -74,7 +74,7 @@ const Signup = () => {
       setHideButton(false)
       setTimeout(() => {
         window.location.reload();
-      }, 3000);   
+      }, 2000);   
       
     } catch (error) {
       if (error.response.status === 400) {
