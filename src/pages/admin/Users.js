@@ -1,4 +1,5 @@
 import React from 'react'
+import User from '../../components/Boards/User';
 
 const Users = () => {
   const role = localStorage.getItem("role");
@@ -8,6 +9,7 @@ const Users = () => {
   }
   return (
     <>
+    <User />
 
     </>
   )

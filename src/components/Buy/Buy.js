@@ -31,10 +31,21 @@ const Buy = () => {
   const [requestSuccess, setRequestSuccess] = useState(false);
   const [requestError, setRequestError] = useState(false)
 
+  const getCurrentDateTime = () => {
+    const now = new Date();
+    const date = now.toLocaleDateString();
+    const hour = now.toLocaleTimeString();
+    return { date, hour };
+  };
+
+  const { date, hour } = getCurrentDateTime();
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     
     const formData = {
+      date,
+      hour,
       total,
       user,
       address,

@@ -1,4 +1,5 @@
 import React from 'react'
+import Menu from '../../components/Boards/Menu';
 
 const Menus = () => {
   const role = localStorage.getItem("role");
@@ -7,7 +8,9 @@ const Menus = () => {
   window.location.href = "/";
   }
   return (
-    <div>Menus</div>
+    <>
+    <Menu />
+    </>
   )
 }
 

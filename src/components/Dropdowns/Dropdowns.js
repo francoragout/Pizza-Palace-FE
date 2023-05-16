@@ -24,7 +24,7 @@ const Dropdowns = () => {
         <ul className="dropdown-menu mt-2 rounded-0 text-center dropdown-menu-end">
           <li><h6>{role}</h6></li>
           <li><p className='text-light m-2'>{user}</p></li>
-          <li><button className="dropdown-item text-light" onClick={logout}><h6>Cerrar sesión</h6></button></li>
+          <li><button className="dropdown-item text-light btn" onClick={logout}><h6>Cerrar sesión</h6></button></li>
         </ul>
       </div>
     </li>
