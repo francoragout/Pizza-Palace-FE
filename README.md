@@ -3,6 +3,7 @@ Final Project: Restaurant Menu by Franco Ragout
 Before starting the journey through the page there are two facts that you should know for a better experience:
 
 Admin email: pizzapalace@gmail.com
+
 Admin password: Pizza1234
 
 Now we can continue with the rest...
