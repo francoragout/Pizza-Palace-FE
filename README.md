@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+Final Project: Restaurant Menu by Franco Ragout
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Before starting the journey through the page there are two facts that you should know for a better experience:
 
-## Available Scripts
+Admin email: pizzapalace@gmail.com
+Admin password: Pizza1234
 
-In the project directory, you can run:
+Now we can continue with the rest...
 
-### `npm start`
+Objective
+Develop an application for customers to choose from different restaurant menus and place their orders.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Sections
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Login
+Login screen where the user can authenticate or register through a link to the registration form.
 
-### `npm test`
+Registration
+It can be a page or a modal where new users can register. The essential data required for entry should be an email and password, with the option to add additional information.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Home
+Main screen with information about the restaurant and the available menus for users to select from.
 
-### `npm run build`
+Orders
+A page that displays the menus selected by the user and their total cost. It should have an order button. Upon clicking, the order will be saved in the database as pending.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Admin Page (CRUD)
+The admin user should be able to access a page that shows the lists of users, menus, and orders and perform the following operations:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+• Users
+Add users
+Deactivate users
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+• Menus (products)
+Add menus
+Modify menus
+Delete menus
 
-### `npm run eject`
+• Orders
+Modify orders from pending to completed
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Technical Requirements
+The displayed data should be persisted in a MongoDB database.
+The frontend should be developed using React.js.
+Protected routes using React Router.
+Authentication using JWT.
+The project should be uploaded to a repository and deployed.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Evaluation Criteria
+● The design should be responsive, using either pure CSS or Bootstrap.
+● Good GIT and Github practices.
+● Use of Trello and SCRUM methodology.
+● Good coding practices in terms of structure.
+● Separate repositories for frontend and backend, both deployed.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Basic Database Structure
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+• Users
+name
+email
+password
+status
+role
 
-## Learn More
+• Menus
+name
+status
+price
+details
+category
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+• Order
+user
+date
+menu
+status
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
