@@ -29,9 +29,24 @@ const Cards = (props) => {
   }, [location])
 
   const { addToCart } = useContext(CartContext);
-  const handleAddToCart = (product) => {
+
+  const handleAddToCart = (product, menuId) => {
+    setLoadingStates(prevState => ({
+      ...prevState,
+      [menuId]: true,
+    }));
+
     addToCart(product);
-  }
+
+    setTimeout(() => {
+      setLoadingStates(prevState => ({
+        ...prevState,
+        [menuId]: false, 
+      }));
+    }, 700);
+  };
+
+  const [loadingStates, setLoadingStates] = useState({});
 
   return (
     <div className="container-lg">
@@ -54,7 +69,19 @@ const Cards = (props) => {
                   <p className='text-secondary' style={{height: "1rem"}}>{menuData.size}</p>     
                   <h5><i className="bi bi-currency-dollar me-1"></i>{menuData.price}</h5>
                 </div>
-                {showButton && <button type="button" className="btn btn-sm btn-secondary mt-2" onClick={() => handleAddToCart(menuData)}>Añadir al carrito<i className="bi bi-cart4 ms-2"></i></button>}
+                {showButton && (
+                    <>
+                      {loadingStates[menuData._id] ? (
+                        <div className="text-center mt-2">
+                          <div className="spinner-border spinner-border-sm" role="status">
+                            <span className="visually-hidden">Loading...</span>
+                          </div>
+                        </div>
+                      ) : (
+                        <button type="button" className="btn btn-sm btn-secondary mt-2" onClick={() => handleAddToCart(menuData, menuData._id)}>Añadir al carrito<i className="bi bi-cart4 ms-2"></i></button>
+                      )}
+                    </>
+                  )}
               </div>
             </div>         
           </div>

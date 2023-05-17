@@ -70,7 +70,7 @@ const User = () => {
                 {user.role === 'admin' ? (
                   <button
                     disabled
-                    className='btn btn-danger btn-sm'
+                    className='btn btn-success btn-sm'
                   >
                     Cambiar estado
                   </button>
@@ -79,7 +79,7 @@ const User = () => {
                     onClick={() =>
                       handleStatusChange(user._id, 'inactivo')
                     }
-                    className='btn btn-danger btn-sm'>
+                    className='btn btn-success btn-sm'>
                     Cambiar estado
                   </button>
                 ) : (
@@ -87,7 +87,7 @@ const User = () => {
                     onClick={() =>
                       handleStatusChange(user._id, 'activo')
                     }
-                    className='btn btn-success btn-sm'>
+                    className='btn btn-danger btn-sm'>
                     Cambiar estado
                   </button>
                 )}
