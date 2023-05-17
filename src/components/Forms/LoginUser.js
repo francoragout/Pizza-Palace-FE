@@ -28,7 +28,7 @@ const LoginUser = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post(`http://localhost:8000/users/login-user`, {
+      const response = await axios.post(`https://pizza-palace-be-production.up.railway.app/users/login-user`, {
         email,
         password,
       });

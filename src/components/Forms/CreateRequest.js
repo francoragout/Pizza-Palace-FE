@@ -54,7 +54,7 @@ const CreateRequest = () => {
     };
 
     try {
-      const response = await axios.post('http://localhost:8000/requests/create-request', formData);
+      const response = await axios.post(`https://pizza-palace-be-production.up.railway.app/requests/create-request`, formData);
       console.log(response.data);
       setRequestSuccess(true);
       setRequestError(false)

@@ -72,7 +72,7 @@ const SignupUser = () => {
     };
 
     try {
-      const response = await axios.post('http://localhost:8000/users/signup-user', formData);
+      const response = await axios.post(`https://pizza-palace-be-production.up.railway.app/users/signup-user`, formData);
       console.log(response.data);
       setRegisterSuccess(true);
       setRegisterError(false)

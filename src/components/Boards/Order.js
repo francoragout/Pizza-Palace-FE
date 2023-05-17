@@ -8,7 +8,7 @@ const Order = () => {
   const [requests, setRequests] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:8000/requests/get-requests`)
+    axios.get(`https://pizza-palace-be-production.up.railway.app/requests/get-requests`,)
       .then(response => {
         setRequests(response.data.reverse());
       })

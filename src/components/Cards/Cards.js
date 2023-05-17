@@ -7,7 +7,7 @@ const Cards = (props) => {
   const [menuData, setMenuData] = useState([]);
   
   useEffect(() => {
-    axios.get('http://localhost:8000/menus/get-menus')
+    axios.get(`https://pizza-palace-be-production.up.railway.app/menus/get-menus`)
       .then(response => {
         const filteredData = response.data.filter(menuData => menuData.category === props.category && menuData.status === 'activo');
         setMenuData(filteredData);

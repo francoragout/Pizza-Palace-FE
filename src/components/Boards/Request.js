@@ -3,9 +3,9 @@ import React, { useEffect, useState } from 'react'
 
 const Request = () => {
   const [requests, setRequests] = useState([]);
-
+  
   useEffect(() => {
-    axios.get('http://localhost:8000/requests/get-requests')
+    axios.get(`https://pizza-palace-be-production.up.railway.app/requests/get-requests`)
     .then(response => {
       setRequests(response.data.reverse());
     })
@@ -21,7 +21,7 @@ const Request = () => {
 
     if (confirmed) {
       try {
-        await axios.put('http://localhost:8000/requests/update-request', {
+        await axios.put(`https://pizza-palace-be-production.up.railway.app/requests/update-request`, {
           id: requestId,
           status: newStatus,
         });

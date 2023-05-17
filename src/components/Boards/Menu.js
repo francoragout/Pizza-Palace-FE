@@ -6,7 +6,7 @@ const Menu = () => {
   const [menus, setMenus] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:8000/menus/get-menus')
+    axios.get(`https://pizza-palace-be-production.up.railway.app/menus/get-menus`)
     .then(response => {
       setMenus(response.data);
     })
@@ -20,7 +20,7 @@ const Menu = () => {
   
     if (confirmed) {
       try {
-        await axios.delete('http://localhost:8000/menus/delete-menu', { data: { id: menuId } });
+        await axios.delete(`https://pizza-palace-be-production.up.railway.app/menus/delete-menu`, { data: { id: menuId } });
         const newMenus = menus.filter(menu => menu._id !== menuId);
         setMenus(newMenus);
       } catch (error) {

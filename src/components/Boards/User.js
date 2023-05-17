@@ -6,7 +6,7 @@ const User = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:8000/users/get-users')
+      .get(`https://pizza-palace-be-production.up.railway.app/users/get-users`)
       .then((response) => {
         setUsers(response.data);
       })
@@ -22,7 +22,7 @@ const User = () => {
 
     if (confirmed) {
       try {
-        await axios.put('http://localhost:8000/users/update-user', {
+        await axios.put(`https://pizza-palace-be-production.up.railway.app/users/update-user`, {
           id: userId,
           status: newStatus,
         });

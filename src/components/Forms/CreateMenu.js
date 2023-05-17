@@ -52,7 +52,7 @@ const CreateMenu = () => {
     };
 
     try {
-      const response = await axios.post('http://localhost:8000/menus/create-menu', formData);
+      const response = await axios.post(`https://pizza-palace-be-production.up.railway.app/menus/create-menu`, formData);
       console.log(response.data)
       setCreateSuccess(true)
       setCreateError(false)

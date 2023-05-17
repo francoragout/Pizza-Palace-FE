@@ -37,7 +37,7 @@ const UpdateMenu = ({ menu }) => {
     event.preventDefault();
 
     try {
-      const response = await axios.put('http://localhost:8000/menus/update-menu', {
+      const response = await axios.put(`https://pizza-palace-be-production.up.railway.app/menus/update-menu`, {
         id: menu._id,
         category: formData.category,
         name: formData.name,
