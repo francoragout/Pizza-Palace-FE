@@ -1,7 +1,7 @@
 import React from 'react'
 import "../Accordion/accordion.css"
-import Login from '../Forms/Login'
-import Signup from '../Forms/Signup'
+import SignupUser from '../Forms/SignupUser'
+import LoginUser from '../Forms/LoginUser'
 
 const Accordion = () => {
   return (
@@ -14,7 +14,7 @@ const Accordion = () => {
         </h2>
         <div id="collapseOne" className="accordion-collapse collapse show"aria-labelledby="headingOne" data-bs-parent="#accordionExample">
           <div className="accordion-body">
-            <Login />         
+            <LoginUser />         
           </div>
         </div>
       </div>
@@ -26,7 +26,7 @@ const Accordion = () => {
         </h2>
         <div id="collapseTwo" className="accordion-collapse collapse"aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
           <div className="accordion-body">
-            <Signup />
+            <SignupUser />
           </div>
         </div>
       </div>

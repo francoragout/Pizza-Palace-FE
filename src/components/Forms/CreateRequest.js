@@ -3,7 +3,7 @@ import Alert from '../Alert/Alert'
 import { CartContext } from '../../contexts/CartContext';
 import axios from 'axios';
 
-const Buy = () => {
+const CreateRequest = () => {
   const { cartItems } = useContext(CartContext);
   const total = cartItems.reduce((acc, item) => acc + item.totalPrice, 0);
   const items = cartItems.map(item => `${item.category} ${item.name} (${item.count})`);
@@ -184,4 +184,4 @@ const Buy = () => {
   )
 }
 
-export default Buy
+export default CreateRequest

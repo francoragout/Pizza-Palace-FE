@@ -16,7 +16,7 @@ const Request = () => {
 
   const handleStatusChange = async (requestId, newStatus) => {
     const confirmed = window.confirm(
-      'Estas seguro de que quieres cambiar el pedido de pendiente a realizado?'
+      'Estas seguro de que quieres cambiar el estado del pedido de pendiente a realizado?'
     );
 
     if (confirmed) {
@@ -84,11 +84,11 @@ const Request = () => {
                     handleStatusChange(request._id, 'Realizado')
                   }
                   className='btn btn-danger btn-sm'>
-                  Cambiar
+                  Cambiar estado
                 </button>
               ) : (
                 <button className='btn btn-success btn-sm' disabled>
-                  Cambiar
+                  Cambiar estado
                 </button>
               )}
             </td>

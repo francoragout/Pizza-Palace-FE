@@ -17,7 +17,7 @@ const User = () => {
 
   const handleStatusChange = async (userId, newStatus) => {
     const confirmed = window.confirm(
-      `¿Estás seguro de que quieres ${newStatus === 'activo' ? 'activar' : 'Inactivar'} este usuario?`
+      `¿Estás seguro de que quieres cambiar el estado del usuario de ${newStatus === 'activo' ? 'inactivo' : 'activo'} a ${newStatus}?`
     );
 
     if (confirmed) {
@@ -45,7 +45,7 @@ const User = () => {
           className='btn btn-secondary mx-auto rounded-5 my-2'
           data-bs-toggle='modal'
           data-bs-target='#exampleModal'
-        >Agregar Usuario</button>
+        >Agregar Admin</button>
       </div>
       <table className='table table-sm table-hover'>
         <thead>
@@ -53,8 +53,8 @@ const User = () => {
             <th scope='col'>Usuario</th>
             <th scope='col'>Nombre</th>
             <th scope='col'>Apellido</th>
-            <th scope='col'>Estado</th>
             <th scope='col'>Rol</th>
+            <th scope='col'>Estado</th>
             <th scope='col'>Acciones</th>
           </tr>
         </thead>
@@ -64,15 +64,15 @@ const User = () => {
               <td>{user.email}</td>
               <td>{user.name}</td>
               <td>{user.lastname}</td>
-              <td>{user.status}</td>
               <td>{user.role}</td>
+              <td>{user.status}</td>
               <td>
                 {user.role === 'admin' ? (
                   <button
                     disabled
                     className='btn btn-danger btn-sm'
                   >
-                    Inactivar
+                    Cambiar estado
                   </button>
                 ) : user.status === 'activo' ? (
                   <button
@@ -80,7 +80,7 @@ const User = () => {
                       handleStatusChange(user._id, 'inactivo')
                     }
                     className='btn btn-danger btn-sm'>
-                    Inactivar
+                    Cambiar estado
                   </button>
                 ) : (
                   <button
@@ -88,7 +88,7 @@ const User = () => {
                       handleStatusChange(user._id, 'activo')
                     }
                     className='btn btn-success btn-sm'>
-                    Activar
+                    Cambiar estado
                   </button>
                 )}
               </td>

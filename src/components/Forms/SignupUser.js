@@ -2,8 +2,13 @@ import axios from 'axios';
 import React from 'react';
 import { useState } from 'react';
 import Alert from '../Alert/Alert';
+import { useLocation } from 'react-router-dom';
 
-const Signup = () => {
+const SignupUser = () => {
+  const location = useLocation();
+  const role = location.pathname === '/' ? 'user' : 'admin';
+  const btn = location.pathname === '/' ? 'Resgistrarse' : 'Agregar admin';
+
   const [name, setName] = useState('');
   const [nameValid, setNameValid] = useState(false);
   const handleNameChange = (event) => {
@@ -54,7 +59,7 @@ const Signup = () => {
   const [registerSuccess, setRegisterSuccess] = useState(false);
   const [registerWarning, setRegisterWarning] = useState(false);
   const [registerError, setRegisterError] = useState(false);
-
+  
   const handleSubmit = async(event) => {
     event.preventDefault();
 
@@ -62,7 +67,8 @@ const Signup = () => {
       name,
       lastname,
       email,
-      password
+      password,
+      role 
     };
 
     try {
@@ -202,10 +208,10 @@ const Signup = () => {
       </div>
       
       {hideButton && (
-        <button type="submit" className="btn btn-secondary" disabled={!formValid}>Registrarse</button>
+        <button type="submit" className="btn btn-secondary" disabled={!formValid}>{btn}</button>
       )}
     </form>
   )
 }
 
-export default Signup
+export default SignupUser

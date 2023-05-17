@@ -9,7 +9,7 @@ const Cards = (props) => {
   useEffect(() => {
     axios.get('http://localhost:8000/menus/get-menus')
       .then(response => {
-        const filteredData = response.data.filter(menuData => menuData.category === props.category);
+        const filteredData = response.data.filter(menuData => menuData.category === props.category && menuData.status === 'activo');
         setMenuData(filteredData);
       })
       .catch(error => {

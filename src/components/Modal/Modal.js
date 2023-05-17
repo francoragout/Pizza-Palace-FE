@@ -1,9 +1,9 @@
 import React from 'react'
 import Accordion from '../Accordion/Accordion'
 import { useLocation } from 'react-router-dom';
-import Buy from '../Buy/Buy';
-import AddMenu from '../Forms/AddMenu';
-import AddUser from '../Forms/AddUser';
+import SignupAdmin from '../Forms/SignupAdmin';
+import CreateMenu from '../Forms/CreateMenu';
+import CreateRequest from '../Forms/CreateRequest';
 
 const Modal = () => {
   const location = useLocation();
@@ -17,16 +17,16 @@ const Modal = () => {
             <Accordion />
           )} 
           {location.pathname === '/home' && (
-            <Buy />
+            <CreateRequest />
           )}     
           {location.pathname === '/orders' && (
-            <Buy />
+            <CreateRequest />
           )}     
           {location.pathname === '/menus' && (
-            <AddMenu />
+            <CreateMenu />
           )}  
           {location.pathname === '/users' && (
-            <AddUser />
+            <SignupAdmin />
           )}   
           </div>       
         </div>

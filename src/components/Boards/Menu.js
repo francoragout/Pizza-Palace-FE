@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import UpdateMenu from '../Forms/UpdateMenu';
 
 const Menu = () => {
   const [menus, setMenus] = useState([]);
@@ -27,8 +28,12 @@ const Menu = () => {
       }
     }
   };
-  
-  
+
+  const [selectedMenu, setSelectedMenu] = useState(null);
+  const handleEditMenu = (menu) => {
+    setSelectedMenu(menu);
+  };
+
   return (
     <>
     <div className='bg-light d-flex'>
@@ -56,13 +61,35 @@ const Menu = () => {
             <td>${menu.price}</td>
             <td>{menu.status}</td>
             <td>
-              <button type="button" className="btn btn-warning btn-sm text-white me-2">Editar</button>
+              <button type="button" className="btn btn-secondary btn-sm me-2" data-bs-toggle="modal" data-bs-target="#exampleModal2" onClick={() => handleEditMenu(menu)}>Editar</button>
               <button type="button" className="btn btn-danger btn-sm" onClick={() => handleDeleteMenu(menu._id)}>Eliminar</button>
             </td>
           </tr>
         ))}
       </tbody>
     </table>
+    <div className="modal fade" id="exampleModal2" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div className="modal-dialog">
+        <div className="modal-content">         
+          <div className="modal-body"> 
+            <div className="accordion" id="accordionExample">
+              <div className="accordion-item">
+                <h2 className="accordion-header" id="headingOne">
+                  <div className="accordion-button bg-dark text-light" type="button" data-bs-toggle="collapse"data-bs-target="#collapseOne" aria-expanded="true"aria-controls="collapseOne">
+                    Editar menú
+                  </div>
+                </h2>
+                <div id="collapseOne" className="accordion-collapse collapse show"aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div className="accordion-body">
+                  {selectedMenu && <UpdateMenu menu={selectedMenu} />}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>       
+        </div>
+      </div>
+    </div>
     </>
   )
 }

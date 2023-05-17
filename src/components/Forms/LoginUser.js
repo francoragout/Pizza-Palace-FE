@@ -3,7 +3,7 @@ import React from 'react';
 import { useState } from 'react';
 import Alert from '../Alert/Alert';
 
-const Login = () => {
+const LoginUser = () => {
   const [email, setEmail] = useState('');
   const [emailValid, setEmailValid] = useState(false);
   const handleEmailChange = (event) => {
@@ -129,4 +129,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default LoginUser
