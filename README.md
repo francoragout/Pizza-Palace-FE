@@ -9,6 +9,7 @@ Admin password: Pizza1234
 Now we can continue with the rest...
 
 Objective
+
 Develop an application for customers to choose from different restaurant menus and place their orders.
 
 Sections
