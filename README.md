@@ -3,6 +3,7 @@ Hello and welcome to my final project of the Rolling Code School full-stack cour
 Before starting...
 
 ADMIN ACCOUNT: pizzapalace@gmail.com
+
 ADMIN PASSWORD: Pizza1234
 
 I hope you enjoy this project and any feedback will be welcome!!!
