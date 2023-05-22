@@ -2,6 +2,10 @@ Hello and welcome to my final project of the Rolling Code School full-stack cour
 
 PROJECT LINK URL: https://spectacular-banoffee-40b6d3.netlify.app/
 
+BACKEND GITHUB REPOSITORY: https://github.com/francoragout/Pizza-Palace-BE.git
+
+FRONTEND GITHUB REPOSITORY: https://github.com/francoragout/Pizza-Palace-FE.git
+
 Before starting...
 
 ADMIN ACCOUNT: pizzapalace@gmail.com
@@ -10,7 +14,7 @@ ADMIN PASSWORD: Pizza1234
 
 I hope you enjoy this project and any feedback will be welcome!!!
 
-BACKEND GITHUB REPOSITORY: https://github.com/francoragout/Pizza-Palace-BE.git
+
 
 
 
