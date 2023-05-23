@@ -42,11 +42,11 @@ const Scrollspy = () => {
         <Cards searchTerm={searchTerm}
         category="Pizza" 
         description="text-warning card-text"/>
-        <h1 className='text-center bg-danger text-light' id="scrollspyHeading2">B E B I D A S</h1>
+        <h1 className='text-center bg-danger text-light mt-3' id="scrollspyHeading2">B E B I D A S</h1>
         <Cards searchTerm={searchTerm}
         category="Bebida"
         description="text-danger text-warning"/>
-        <h1 className='text-center bg-success text-light' id="scrollspyHeading3">C E R V E Z A S</h1>
+        <h1 className='text-center bg-success text-light mt-3' id="scrollspyHeading3">C E R V E Z A S</h1>
         <Cards searchTerm={searchTerm}
         category="Cerveza"
         description="text-success card-text"/>

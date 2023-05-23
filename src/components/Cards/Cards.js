@@ -55,11 +55,14 @@ const Cards = (props) => {
           .filter(menu => menu.name.toLowerCase().includes(props.searchTerm.toLowerCase()))
           .map(menuData => (
           <div className="col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center my-3" key={menuData._id}>
-            <div className="card text-bg-dark" style={{width: "18rem"}}>
-              <div className="card-header text-secondary">
+            <div className="card text-bg-light" style={{width: "18rem"}}>
+              <div className="card-header text-secondary bg-dark">
                 {menuData.category}
               </div>
-              <div className="card-body">
+              <div className='d-flex mx-auto'>
+                <img src={menuData.image} alt={menuData.name} style={{width: '8rem', height: '8rem'}} className=''/>               
+              </div>
+              <div className="card-body text-bg-dark">
                 <div className='d-flex justify-content-between'>
                   <h4 className="card-title">{menuData.name}</h4>
                   <h4><i className="bi bi-arrow-down-circle-fill"></i></h4>

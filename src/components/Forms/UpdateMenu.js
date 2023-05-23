@@ -5,6 +5,7 @@ import Alert from '../Alert/Alert';
 const UpdateMenu = ({ menu }) => {
   const [formData, setFormData] = useState({
     category: '',
+    image: '',
     name: '',
     description: '',
     size: '',
@@ -15,6 +16,7 @@ const UpdateMenu = ({ menu }) => {
   useEffect(() => {
     setFormData({
       category: menu.category,
+      image: menu.image,
       name: menu.name,
       description: menu.description,
       size: menu.size,
@@ -40,6 +42,7 @@ const UpdateMenu = ({ menu }) => {
       const response = await axios.put(`https://pizza-palace-be-production.up.railway.app/menus/update-menu`, {
         id: menu._id,
         category: formData.category,
+        image: formData.image,
         name: formData.name,
         description: formData.description,
         size: formData.size,
@@ -92,6 +95,22 @@ const UpdateMenu = ({ menu }) => {
           value={formData.category}
           />
           <label htmlFor="category">Categoría</label>
+        </div>
+      </div>
+
+      <div className="input-group mb-3">
+        <span className="input-group-text"><i className="bi bi-file-earmark-image"></i></span>
+        <div className="form-floating">
+          <input 
+          type="text" 
+          className="form-control" 
+          name='image'
+          id="image"
+          placeholder="Imagen" 
+          onChange={handleInputChange}
+          value={formData.image}
+          />
+          <label htmlFor="image">Imagen</label>
         </div>
       </div>
               

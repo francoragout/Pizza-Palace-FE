@@ -10,6 +10,11 @@ const CreateMenu = () => {
     setCategoryValid(event.target.value.match(/^(Pizza|Bebida|Cerveza)$/i));
   }
 
+  const [image, setImage] = useState('');
+  const handleImageChange = (event) => {
+    setImage(event.target.value)
+  }
+
   const [name, setName] = useState('');
   const handleNameChange = (event) => {
     setName(event.target.value);
@@ -35,7 +40,7 @@ const CreateMenu = () => {
   const [createError, setCreateError] = useState(false);
 
   const [formValid, setFormValid] = useState(false);
-  const isFormValid = categoryValid && name && description && size && price;
+  const isFormValid = categoryValid && image && name && description && size && price;
   if (formValid !== isFormValid) {
     setFormValid(isFormValid);
   }
@@ -45,6 +50,7 @@ const CreateMenu = () => {
 
     const formData = {
       category,
+      image,
       name,
       description,
       size,
@@ -110,6 +116,26 @@ const CreateMenu = () => {
               </div>
               <div className='mb-3'>
               {!categoryValid && <span className='text-secondary'>Pizza, Bebida o Cerveza</span>}
+              </div>
+
+              <div className='input-group mb-3'>
+                <span className="input-group-text"><i className="bi bi-file-earmark-image"></i></span>
+                <div className="form-floating">
+                  <input 
+                  type="text" 
+                  maxLength="200"
+                  className="form-control" 
+                  name='image'
+                  id="image"
+                  placeholder="Imagen" 
+                  onChange={handleImageChange}
+                  value={image}
+                  />
+                  <label htmlFor="image">Imagen</label>
+                </div>
+              </div>
+              <div className='mb-3'>
+              {!image && <span className='text-secondary'>Este campo es requerido.</span>}
               </div>
 
               <div className="form-floating mb-1">
