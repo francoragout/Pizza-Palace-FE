@@ -39,35 +39,37 @@ const Menu = () => {
     <div className='bg-light d-flex'>
       <button className="btn btn-secondary mx-auto rounded-5 my-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Agregar Menú</button>
     </div>
-    <table className="table table-sm table-hover">
-      <thead>
-        <tr>
-          <th scope="col">Categoria</th>
-          <th scope="col">Nombre</th>
-          <th scope="col">Descripción</th>
-          <th scope="col">Medida</th>
-          <th scope="col">Precio</th>
-          <th scope="col">Estado</th>
-          <th scope="col">Acciones</th>
-        </tr>
-      </thead>
-      <tbody>
-        {menus.map(menu => (
-          <tr key={menu._id}>
-            <td>{menu.category}</td>
-            <td>{menu.name}</td>
-            <td>{menu.description}</td>
-            <td>{menu.size}</td>
-            <td>${menu.price}</td>
-            <td>{menu.status}</td>
-            <td>
-              <button type="button" className="btn btn-secondary btn-sm me-2" data-bs-toggle="modal" data-bs-target="#exampleModal2" onClick={() => handleEditMenu(menu)}>Editar</button>
-              <button type="button" className="btn btn-danger btn-sm" onClick={() => handleDeleteMenu(menu._id)}>Eliminar</button>
-            </td>
+    <div className='table-responsive'>
+      <table className="table table-sm table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Categoria</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Medida</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Acciones</th>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {menus.map(menu => (
+            <tr key={menu._id}>
+              <td>{menu.category}</td>
+              <td>{menu.name}</td>
+              <td>{menu.description}</td>
+              <td>{menu.size}</td>
+              <td>${menu.price}</td>
+              <td>{menu.status}</td>
+              <td>
+                <button type="button" className="btn btn-secondary btn-sm me-2" data-bs-toggle="modal" data-bs-target="#exampleModal2" onClick={() => handleEditMenu(menu)}>Editar</button>
+                <button type="button" className="btn btn-danger btn-sm" onClick={() => handleDeleteMenu(menu._id)}>Eliminar</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
     <div className="modal fade" id="exampleModal2" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div className="modal-dialog">
         <div className="modal-content">         

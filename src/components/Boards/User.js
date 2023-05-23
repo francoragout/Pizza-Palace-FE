@@ -47,55 +47,57 @@ const User = () => {
           data-bs-target='#exampleModal'
         >Agregar Admin</button>
       </div>
-      <table className='table table-sm table-hover'>
-        <thead>
-          <tr>
-            <th scope='col'>Usuario</th>
-            <th scope='col'>Nombre</th>
-            <th scope='col'>Apellido</th>
-            <th scope='col'>Rol</th>
-            <th scope='col'>Estado</th>
-            <th scope='col'>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          {users.map((user) => (
-            <tr key={user._id}>
-              <td>{user.email}</td>
-              <td>{user.name}</td>
-              <td>{user.lastname}</td>
-              <td>{user.role}</td>
-              <td>{user.status}</td>
-              <td>
-                {user.role === 'admin' ? (
-                  <button
-                    disabled
-                    className='btn btn-success btn-sm'
-                  >
-                    Cambiar estado
-                  </button>
-                ) : user.status === 'activo' ? (
-                  <button
-                    onClick={() =>
-                      handleStatusChange(user._id, 'inactivo')
-                    }
-                    className='btn btn-success btn-sm'>
-                    Cambiar estado
-                  </button>
-                ) : (
-                  <button
-                    onClick={() =>
-                      handleStatusChange(user._id, 'activo')
-                    }
-                    className='btn btn-danger btn-sm'>
-                    Cambiar estado
-                  </button>
-                )}
-              </td>
+      <div className='table-responsive'>
+        <table className='table table-sm table-hover'>
+          <thead>
+            <tr>
+              <th scope='col'>Usuario</th>
+              <th scope='col'>Nombre</th>
+              <th scope='col'>Apellido</th>
+              <th scope='col'>Rol</th>
+              <th scope='col'>Estado</th>
+              <th scope='col'>Acciones</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {users.map((user) => (
+              <tr key={user._id}>
+                <td>{user.email}</td>
+                <td>{user.name}</td>
+                <td>{user.lastname}</td>
+                <td>{user.role}</td>
+                <td>{user.status}</td>
+                <td>
+                  {user.role === 'admin' ? (
+                    <button
+                      disabled
+                      className='btn btn-success btn-sm'
+                    >
+                      Cambiar estado
+                    </button>
+                  ) : user.status === 'activo' ? (
+                    <button
+                      onClick={() =>
+                        handleStatusChange(user._id, 'inactivo')
+                      }
+                      className='btn btn-success btn-sm'>
+                      Cambiar estado
+                    </button>
+                  ) : (
+                    <button
+                      onClick={() =>
+                        handleStatusChange(user._id, 'activo')
+                      }
+                      className='btn btn-danger btn-sm'>
+                      Cambiar estado
+                    </button>
+                  )}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </>
   );
 };
