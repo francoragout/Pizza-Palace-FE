@@ -1,4 +1,5 @@
 import React from 'react'
+import { GiFullPizza } from 'react-icons/gi'
 
 const Footer = () => {
   return (
@@ -14,7 +15,7 @@ const Footer = () => {
         <p className='text-center pt-2'>Direccion: Gral. Paz 576, T4000 San Miguel de Tucumán, Tucumán.</p>
       </div>
       <div className='col-lg-3 col-md-6 text-light my-auto'>
-        <h5 className='text-center pt-2'><b>P i z z a P a l a c e</b></h5>
+        <h5 className='text-center pt-2'><b>P i z z a P a l a c e<GiFullPizza className='ms-1'/></b></h5>
         <p className='text-light col-md-6 text-center mx-auto'><i className="bi bi-r-circle me-1"></i>Todos los derechos reservados</p>
       </div>
       <div className='col-lg-3 col-md-6 text-light my-auto'>

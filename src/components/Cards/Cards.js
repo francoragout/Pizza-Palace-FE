@@ -2,6 +2,9 @@ import React, { useContext, useEffect, useState } from 'react'
 import axios from 'axios';
 import { useLocation } from "react-router-dom";
 import { CartContext } from '../../contexts/CartContext';
+import { CiPizza } from 'react-icons/ci'
+import { IoBeerOutline } from 'react-icons/io5'
+import { BsCupStraw } from 'react-icons/bs'
 
 const Cards = (props) => {
   const [menuData, setMenuData] = useState([]);
@@ -46,6 +49,19 @@ const Cards = (props) => {
     }, 700);
   };
 
+  const getCategoryIcon = (category) => {
+    switch (category) {
+      case 'Pizza':
+        return <CiPizza />;
+      case 'Bebida':
+        return <BsCupStraw />;
+      case 'Cerveza':
+        return <IoBeerOutline />;
+      default:
+        return null;
+    }
+  };
+
   const [loadingStates, setLoadingStates] = useState({});
 
   return (
@@ -65,7 +81,7 @@ const Cards = (props) => {
               <div className="card-body text-bg-dark">
                 <div className='d-flex justify-content-between'>
                   <h4 className="card-title">{menuData.name}</h4>
-                  <h4><i className="bi bi-arrow-down-circle-fill"></i></h4>
+                  <h4>{getCategoryIcon(menuData.category)}</h4>
                 </div>
                 <p className={props.description} style={{height: "2.1rem"}}>{menuData.description}</p>
                 <div className='d-flex justify-content-between'>

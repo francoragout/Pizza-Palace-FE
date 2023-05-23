@@ -10,6 +10,7 @@ import Link3 from '../NavLinks/Link3';
 import Link4 from '../NavLinks/Link4';
 import Link5 from '../NavLinks/Link5';
 import { CartContext } from '../../contexts/CartContext';
+import { GiFullPizza } from 'react-icons/gi'
 
 const Navbar = () => {
   const location = useLocation();
@@ -19,7 +20,7 @@ const Navbar = () => {
     <>
     <nav className="navbar navbar-expand-md bg-dark" data-bs-theme="dark">
       <div className="container-fluid">
-        <div className='navbar-brand'><b>P i z z a P a l a c e</b></div>
+        <div className='navbar-brand'><h3 className='me-2'>P i z z a P a l a c e <GiFullPizza/></h3></div>
         <button className="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
